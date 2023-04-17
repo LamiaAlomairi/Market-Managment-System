@@ -18,6 +18,7 @@ public class Invoice {
     String invoice_date;
     Float price;
     Float amount;
+    Data data;
 
     @ManyToOne
     @JoinColumn(name = "market_id", referencedColumnName = "id")
