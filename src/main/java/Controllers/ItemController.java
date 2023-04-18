@@ -1,10 +1,9 @@
 package Controllers;
+import Models.Customer;
 import Models.Item;
 import Services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -14,7 +13,12 @@ public class ItemController {
     ItemService itemService;
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Item> findItems() {
+    public List<Item> getItems() {
         return itemService.getAllItems();
+    }
+
+    @GetMapping(value = "getById")
+    public Item getItemById(@RequestParam Integer id) {
+        return itemService.getItemById(id);
     }
 }

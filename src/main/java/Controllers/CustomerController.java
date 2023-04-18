@@ -12,8 +12,13 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Customer> findCustomers() {
+    public List<Customer> getCustomers() {
+
         return customerService.getAllCustomers();
+    }
+    @GetMapping(value = "getById")
+    public Customer getCustomerById(@RequestParam Integer id) {
+        return customerService.getCustomerById(id);
     }
 
 }

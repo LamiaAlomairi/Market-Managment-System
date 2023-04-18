@@ -1,5 +1,6 @@
 package Services;
 
+import Models.Customer;
 import Models.Market;
 import Repositories.MarketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,5 +15,9 @@ public class MarketService {
 
     public List<Market> getAllMarkets() {
         return marketRepository.findAll();
+    }
+
+    public Market getMarketById(int id) {
+        return marketRepository.findById(id).orElse(null);
     }
 }

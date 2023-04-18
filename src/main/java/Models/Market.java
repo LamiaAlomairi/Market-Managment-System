@@ -14,14 +14,23 @@ import java.util.*;
 public class Market {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "market_id")
+    private int id;
 
-    @Column(name = "Market_id")
-    Integer id;
+    @Column(name = "market_name")
+    private String name;
 
-    @Column(name = "Market_name")
-    String market_name;
+    @OneToMany(mappedBy = "market")
+    private List<Invoice> invoices;
 
-    @OneToMany
-    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
-    List<Invoice> invoices;
+    @OneToMany(mappedBy = "market")
+    private List<Customer> customers;
+
+//    @OneToMany
+//    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
+//    List<Invoice> invoice;
+//
+//    @OneToMany
+//    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+//    List<Customer> customer;
 }

@@ -1,7 +1,6 @@
 package Services;
 
-import Controllers.ItemController;
-import Models.Invoice;
+import Models.Customer;
 import Models.Item;
 import Repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +14,9 @@ public class ItemService {
     ItemRepository itemRepository;
     public List<Item> getAllItems() {
         return itemRepository.findAll();
+    }
+
+    public Item getItemById(Integer id) {
+        return itemRepository.findById(id).orElse(null);
     }
 }
