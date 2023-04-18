@@ -13,14 +13,16 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Item id")
+    @Column(name = "Item_id")
     Integer item_id;
-    @Column(name = "Item name")
+
+    @Column(name = "Item_name")
     String item_name;
-    @Column(name = "Item price")
+
+    @Column(name = "price")
     Float item_price;
 
     @ManyToOne
-    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
+    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
     Invoice invoice;
 }

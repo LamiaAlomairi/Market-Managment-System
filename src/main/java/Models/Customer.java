@@ -10,13 +10,21 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "Customer id")
+    @Column(name = "Customer_id")
     Integer customer_id;
-    @Column(name = "Customer name")
+    @Column(name = "Customer_name")
     String customer_name;
+
+    String email;
+
+    String address;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    Market market;
 
 }
