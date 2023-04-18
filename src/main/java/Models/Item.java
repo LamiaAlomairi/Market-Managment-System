@@ -13,9 +13,11 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "Item id")
     Integer item_id;
+    @Column(name = "Item name")
     String item_name;
+    @Column(name = "Item price")
     Float item_price;
 
     @ManyToOne
