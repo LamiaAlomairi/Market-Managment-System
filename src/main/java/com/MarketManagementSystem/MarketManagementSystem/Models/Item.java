@@ -23,7 +23,7 @@ public class Item {
     @Column(name = "item_price")
     Float price;
 
-//    @ManyToOne
-//    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
-//    Invoice invoice;
+    @ManyToOne
+    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
+    Market market;
 }

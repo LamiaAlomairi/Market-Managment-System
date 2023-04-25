@@ -20,17 +20,12 @@ public class Market {
     @Column(name = "market_name")
     String name;
 
-//    @OneToMany(mappedBy = "market")
-//    private List<Invoice> invoices;
-//
-//    @OneToMany(mappedBy = "market")
-//    private List<Customer> customers;
-//
-//    @OneToMany
-//    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
-//    List<Invoice> invoice;
-//
-//    @OneToMany
-//    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
-//    List<Customer> customer;
+    @OneToMany(mappedBy = "market")
+    private List<Customer> customers;
+
+    @OneToMany(mappedBy = "market")
+    private List<Item> items;
+
+    @OneToMany(mappedBy = "market")
+    private List<Invoice> invoices;
 }

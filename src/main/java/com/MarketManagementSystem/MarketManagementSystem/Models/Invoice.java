@@ -24,19 +24,18 @@ public class Invoice {
     @Column(name = "Amount")
     Float amount;
 
-//    @ManyToOne
-//    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
-//    Customer customer;
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "invoice_item",
-//            joinColumns = @JoinColumn(name = "invoice_id"),
-//            inverseJoinColumns = @JoinColumn(name = "item_id"))
-//    List<Item> items;
-//
-//
-//    @ManyToOne
-//    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
-//    Market market;
+    @ManyToOne
+    @JoinColumn(name = "Customer_id", referencedColumnName = "Customer_id")
+    Customer customer;
+
+    @ManyToMany
+    @JoinTable(
+            name = "invoice_item",
+            joinColumns = @JoinColumn(name = "invoice_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id"))
+    List<Item> items;
+
+    @ManyToOne
+    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
+    Market market;
 }

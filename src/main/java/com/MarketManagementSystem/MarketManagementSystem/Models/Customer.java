@@ -20,16 +20,14 @@ public class Customer {
     Integer customer_id;
     @Column(name = "Customer_name")
     String customer_name;
+    @Column(name = "Phone_number")
+    Integer phone;
 
-    String email;
+    @ManyToOne
+    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
+    Market market;
 
-    String address;
-
-//    @ManyToOne
-//    @JoinColumn(name = "market_id", referencedColumnName = "id")
-//    Market market;
-//
-//    @OneToMany(mappedBy = "customer")
-//    List<Invoice> invoices;
+    @OneToMany(mappedBy = "customer")
+    List<Invoice> invoices;
 
 }
