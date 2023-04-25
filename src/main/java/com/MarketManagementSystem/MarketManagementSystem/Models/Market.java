@@ -1,5 +1,7 @@
 package com.MarketManagementSystem.MarketManagementSystem.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,11 +23,6 @@ public class Market {
     String name;
 
     @OneToMany(mappedBy = "market")
-    private List<Customer> customers;
-
-    @OneToMany(mappedBy = "market")
-    private List<Item> items;
-
-    @OneToMany(mappedBy = "market")
+    @JsonIgnore
     private List<Invoice> invoices;
 }

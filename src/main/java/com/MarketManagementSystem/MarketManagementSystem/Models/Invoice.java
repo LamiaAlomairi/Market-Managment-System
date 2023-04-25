@@ -15,11 +15,11 @@ public class Invoice {
     @Column(name = "Invoice_id")
     Integer invoice_id;
 
-    @Column(name = "Invoice_date")
+    @Column(name = "Date")
     String invoice_date;
 
-    @Column(name = "Price")
-    Float price;
+    @Column(name = "Paid_amount")
+    Float paid_amount;
 
     @Column(name = "Amount")
     Float amount;
@@ -29,10 +29,7 @@ public class Invoice {
     Customer customer;
 
     @ManyToMany
-    @JoinTable(
-            name = "invoice_item",
-            joinColumns = @JoinColumn(name = "invoice_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id"))
+    @JoinTable(name = "invoice_item", joinColumns = @JoinColumn(name = "invoice_id"), inverseJoinColumns = @JoinColumn(name = "item_id"))
     List<Item> items;
 
     @ManyToOne

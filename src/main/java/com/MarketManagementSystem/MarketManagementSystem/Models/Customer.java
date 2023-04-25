@@ -1,5 +1,6 @@
 package com.MarketManagementSystem.MarketManagementSystem.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,16 +19,15 @@ public class Customer {
 
     @Column(name = "Customer_id")
     Integer customer_id;
+
     @Column(name = "Customer_name")
     String customer_name;
+
     @Column(name = "Phone_number")
     Integer phone;
 
-    @ManyToOne
-    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
-    Market market;
-
     @OneToMany(mappedBy = "customer")
+    @JsonIgnore
     List<Invoice> invoices;
 
 }
