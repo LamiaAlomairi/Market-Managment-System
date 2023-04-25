@@ -1,4 +1,4 @@
-package Models;
+package com.MarketManagementSystem.MarketManagementSystem.Models;
 
 import lombok.Data;
 import lombok.Getter;
@@ -15,17 +15,17 @@ public class Market {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "market_id")
-    private int id;
+    int id;
 
     @Column(name = "market_name")
-    private String name;
+    String name;
 
-    @OneToMany(mappedBy = "market")
-    private List<Invoice> invoices;
-
-    @OneToMany(mappedBy = "market")
-    private List<Customer> customers;
-
+//    @OneToMany(mappedBy = "market")
+//    private List<Invoice> invoices;
+//
+//    @OneToMany(mappedBy = "market")
+//    private List<Customer> customers;
+//
 //    @OneToMany
 //    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
 //    List<Invoice> invoice;

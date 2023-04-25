@@ -1,4 +1,4 @@
-package Models;
+package com.MarketManagementSystem.MarketManagementSystem.Models;
 
 import lombok.Data;
 import lombok.Getter;
@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
+@Table(name = "item")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class Item {
     @Column(name = "item_price")
     Float price;
 
-    @ManyToOne
-    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
-    Invoice invoice;
+//    @ManyToOne
+//    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
+//    Invoice invoice;
 }

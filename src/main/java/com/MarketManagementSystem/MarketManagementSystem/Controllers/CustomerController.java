@@ -1,7 +1,7 @@
-package Controllers;
+package com.MarketManagementSystem.MarketManagementSystem.Controllers;
 
-import Models.Customer;
-import Services.CustomerService;
+import com.MarketManagementSystem.MarketManagementSystem.Models.Customer;
+import com.MarketManagementSystem.MarketManagementSystem.Services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
@@ -12,7 +12,7 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Customer> getCustomers() {
+    public List<Customer> getAllCustomers() {
 
         return customerService.getAllCustomers();
     }

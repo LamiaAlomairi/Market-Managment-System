@@ -1,7 +1,7 @@
-package Services;
+package com.MarketManagementSystem.MarketManagementSystem.Services;
 
-import Models.Invoice;
-import Repositories.InvoiceRepository;
+import com.MarketManagementSystem.MarketManagementSystem.Models.Invoice;
+import com.MarketManagementSystem.MarketManagementSystem.Repositories.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -17,6 +17,7 @@ public class InvoiceService {
     }
 
     public Invoice getInvoiceById(Integer id) {
-        return invoiceRepository.findById((int) id).get();
+
+        return invoiceRepository.findById(id).get();
     }
 }

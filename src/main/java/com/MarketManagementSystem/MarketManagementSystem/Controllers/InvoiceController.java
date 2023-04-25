@@ -1,7 +1,7 @@
-package Controllers;
+package com.MarketManagementSystem.MarketManagementSystem.Controllers;
 
-import Models.Invoice;
-import Services.InvoiceService;
+import com.MarketManagementSystem.MarketManagementSystem.Models.Invoice;
+import com.MarketManagementSystem.MarketManagementSystem.Services.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ public class InvoiceController {
     InvoiceService invoiceService;
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Invoice> getInvoices() {
+    public List<Invoice> getAllInvoices() {
         return invoiceService.getAllInvoices();
     }
 

@@ -1,11 +1,11 @@
-package Repositories;
+package com.MarketManagementSystem.MarketManagementSystem.Repositories;
 
-import Models.Item;
+import com.MarketManagementSystem.MarketManagementSystem.Models.Invoice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableJpaRepositories
-public interface ItemRepository extends JpaRepository<Item, Integer> {
+public interface InvoiceRepository extends JpaRepository<Invoice, Integer> {
 }
