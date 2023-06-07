@@ -12,20 +12,13 @@ import java.util.*;
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Invoice_id")
-    Integer invoice_id;
-
-    @Column(name = "Date")
-    String invoice_date;
-
-    @Column(name = "Paid_amount")
-    Float paid_amount;
-
-    @Column(name = "Amount")
+    Integer id;
+    String date;
+    Float paidAmount;
     Float amount;
 
     @ManyToOne
-    @JoinColumn(name = "Customer_id", referencedColumnName = "Customer_id")
+    @JoinColumn(name = "Customer_id", referencedColumnName = "id")
     Customer customer;
 
     @ManyToMany
@@ -33,6 +26,6 @@ public class Invoice {
     List<Item> items;
 
     @ManyToOne
-    @JoinColumn(name = "market_id", referencedColumnName = "market_id")
+    @JoinColumn(name = "market_id", referencedColumnName = "id")
     Market market;
 }

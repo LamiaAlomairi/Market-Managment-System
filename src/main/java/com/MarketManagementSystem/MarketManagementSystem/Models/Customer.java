@@ -16,14 +16,8 @@ import java.util.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "Customer_id")
-    Integer customer_id;
-
-    @Column(name = "Customer_name")
-    String customer_name;
-
-    @Column(name = "Phone_number")
+    Integer id;
+    String name;
     Integer phone;
 
     @OneToMany(mappedBy = "customer")

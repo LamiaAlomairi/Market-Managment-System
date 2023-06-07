@@ -14,12 +14,7 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "item_id")
     Integer id;
-
-    @Column(name = "item_name")
     String name;
-
-    @Column(name = "item_price")
     Float price;
 }
